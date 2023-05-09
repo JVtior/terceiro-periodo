@@ -26,35 +26,35 @@ public class CidadeController {
         List<Cidade> response = cidadeService.buscarTodos();
         return ResponseEntity.ok(response);
     }
-    @GetMapping(path = "/{id}")
-    public ResponseEntity<Cidade> buscarPorId(@PathVariable Long id ){
-        Optional<Cidade> response = cidadeService.buscarPorId(id);
-        if(response.isPresent()){
-            return ResponseEntity.ok(response.get());
-        }
-        return ResponseEntity.notFound().build();
-    }
-    @PutMapping()
-    public ResponseEntity<Cidade>update(@RequestBody Cidade cidade){
-        if (!cidadeService.buscarPorId(cidade.getId()).isPresent()){
-            return ResponseEntity.notFound().build();
-        }
-        return  ResponseEntity.ok(cidadeService.atualizar(cidade));
-    }
-    @GetMapping(path = "/nome/{nome}")
-    public ResponseEntity<List<Cidade>> buscarPorNome(@PathVariable String nome ){
-        List<Cidade> response = cidadeService.buscarPorNome(nome);
-        if (response!= null && !response.isEmpty()){
-            return ResponseEntity.ok(response);
-        }
-        return ResponseEntity.notFound().build();
-    }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
-        if (!cidadeService.buscarPorId(id).isPresent()){
-            return ResponseEntity.notFound().build();
-        }
-        cidadeService.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @GetMapping(path = "/{id}")
+//    public ResponseEntity<Cidade> buscarPorId(@PathVariable Long id ){
+//        Optional<Cidade> response = cidadeService.buscarPorId(id);
+//        if(response.isPresent()){
+//            return ResponseEntity.ok(response.get());
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
+//    @PutMapping()
+//    public ResponseEntity<Cidade>update(@RequestBody Cidade cidade){
+//        if (!cidadeService.buscarPorId(cidade.getId()).isPresent()){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return  ResponseEntity.ok(cidadeService.atualizar(cidade));
+//    }
+//    @GetMapping(path = "/nome/{nome}")
+//    public ResponseEntity<List<Cidade>> buscarPorNome(@PathVariable String nome ){
+//        List<Cidade> response = cidadeService.buscarPorNome(nome);
+//        if (response!= null && !response.isEmpty()){
+//            return ResponseEntity.ok(response);
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> delete(@PathVariable Long id){
+//        if (!cidadeService.buscarPorId(id).isPresent()){
+//            return ResponseEntity.notFound().build();
+//        }
+//        cidadeService.deleteById(id);
+//        return ResponseEntity.noContent().build();
+//    }
 }

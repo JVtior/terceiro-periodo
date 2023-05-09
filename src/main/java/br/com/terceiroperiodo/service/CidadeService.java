@@ -21,13 +21,13 @@ public class CidadeService {
         response.removeIf(cidade -> !cidade.getAtivo());
         return response;
     }
-    public Optional<Cidade> buscarPorId(Long id){
-        return cidadeRepository.findById(id);
-    }
-    public Cidade atualizar(Cidade cidade){return cidadeRepository.save(cidade);
-    }
-    public List<Cidade> buscarPorNome(String nome){
-        return cidadeRepository.findByNomeAndAtivo(nome, true);
-    }
-    public void deleteById(Long id){cidadeRepository.deleteById(id);}
+//    public Optional<Cidade> buscarPorId(Long id){
+//        return cidadeRepository.findById(id);
+//    }
+//    public Cidade atualizar(Cidade cidade){return cidadeRepository.save(cidade);
+//    }
+//    public List<Cidade> buscarPorNome(String nome){
+//        return cidadeRepository.findByNomeAndAtivo(nome, true);
+//    }
+//    public void deleteById(Long id){cidadeRepository.deleteById(id);}
 }
